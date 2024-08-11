@@ -6,63 +6,87 @@
     <title>Customer Service Feedback</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f4f4f9;
+            background-color: #e8f0fe;
         }
         .container {
             background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px; /* This ensures the form is centered */
         }
         h1 {
             text-align: center;
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
         }
         form {
             display: flex;
             flex-direction: column;
         }
         label {
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: bold;
         }
         input, select, textarea {
             margin-bottom: 15px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+        textarea {
+            resize: vertical;
+        }
+        .rating-section {
+            margin-bottom: 20px;
+        }
+        .rating-label {
+            margin-bottom: 5px;
+            font-size: 16px;
+            color: #444;
         }
         .stars {
             display: flex;
-            justify-content: space-between;
-            width: 125px;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            gap: 5px;
         }
-        input[type="radio"] {
+        .stars input[type="radio"] {
             display: none;
         }
-        label.star {
-            font-size: 24px;
+        .stars label {
+            font-size: 25px;
+            color: #ddd;
             cursor: pointer;
+            transition: color 0.2s;
         }
-        label.star:hover,
-        label.star:hover ~ label.star {
-            color: #ffcc00;
+        .stars input[type="radio"]:checked ~ label {
+            color: #f5c518;
         }
-        input[type="radio"]:checked ~ label.star {
-            color: #ffcc00;
+        .stars label:hover,
+        .stars label:hover ~ label {
+            color: #f5c518;
         }
         button {
-            padding: 10px;
+            padding: 12px;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             background: #007bff;
             color: white;
+            font-size: 16px;
             cursor: pointer;
+            transition: background-color 0.2s;
         }
         button:hover {
             background: #0056b3;
@@ -72,38 +96,46 @@
 <body>
     <div class="container">
         <h1>Customer Service Feedback</h1>
-        <form action="https://formsubmit.co/nagybence20179@gmail.com" method="POST">
+        <form action="https://formsubmit.co/mrnewoneoriginal@gmail.com" method="POST">
             <label for="name">Name (optional):</label>
             <input type="text" id="name" name="name">
 
             <label for="date">Date of Visit:</label>
             <input type="date" id="date" name="date" required>
 
-            <label for="food_drink">Food/Drink:</label>
-            <div class="stars">
-                <input type="radio" id="food_drink5" name="food_drink" value="★★★★★"><label for="food_drink5" class="star">★</label>
-                <input type="radio" id="food_drink4" name="food_drink" value="★★★★"><label for="food_drink4" class="star">★</label>
-                <input type="radio" id="food_drink3" name="food_drink" value="★★★"><label for="food_drink3" class="star">★</label>
-                <input type="radio" id="food_drink2" name="food_drink" value="★★"><label for="food_drink2" class="star">★</label>
-                <input type="radio" id="food_drink1" name="food_drink" value="★"><label for="food_drink1" class="star">★</label>
-            </div>
+            <div class="rating-section">
+                <div class="rating-category">
+                    <div class="rating-label">Food/Drink:</div>
+                    <div class="stars">
+                        <input type="radio" id="food-drink-5" name="food_drink" value="5" required><label for="food-drink-5">&#9733;</label>
+                        <input type="radio" id="food-drink-4" name="food_drink" value="4" required><label for="food-drink-4">&#9733;</label>
+                        <input type="radio" id="food-drink-3" name="food_drink" value="3" required><label for="food-drink-3">&#9733;</label>
+                        <input type="radio" id="food-drink-2" name="food_drink" value="2" required><label for="food-drink-2">&#9733;</label>
+                        <input type="radio" id="food-drink-1" name="food_drink" value="1" required><label for="food-drink-1">&#9733;</label>
+                    </div>
+                </div>
 
-            <label for="service">Service:</label>
-            <div class="stars">
-                <input type="radio" id="service5" name="service" value="★★★★★"><label for="service5" class="star">★</label>
-                <input type="radio" id="service4" name="service" value="★★★★"><label for="service4" class="star">★</label>
-                <input type="radio" id="service3" name="service" value="★★★"><label for="service3" class="star">★</label>
-                <input type="radio" id="service2" name="service" value="★★"><label for="service2" class="star">★</label>
-                <input type="radio" id="service1" name="service" value="★"><label for="service1" class="star">★</label>
-            </div>
+                <div class="rating-category">
+                    <div class="rating-label">Service:</div>
+                    <div class="stars">
+                        <input type="radio" id="service-5" name="service" value="5" required><label for="service-5">&#9733;</label>
+                        <input type="radio" id="service-4" name="service" value="4" required><label for="service-4">&#9733;</label>
+                        <input type="radio" id="service-3" name="service" value="3" required><label for="service-3">&#9733;</label>
+                        <input type="radio" id="service-2" name="service" value="2" required><label for="service-2">&#9733;</label>
+                        <input type="radio" id="service-1" name="service" value="1" required><label for="service-1">&#9733;</label>
+                    </div>
+                </div>
 
-            <label for="value">Value:</label>
-            <div class="stars">
-                <input type="radio" id="value5" name="value" value="★★★★★"><label for="value5" class="star">★</label>
-                <input type="radio" id="value4" name="value" value="★★★★"><label for="value4" class="star">★</label>
-                <input type="radio" id="value3" name="value" value="★★★"><label for="value3" class="star">★</label>
-                <input type="radio" id="value2" name="value" value="★★"><label for="value2" class="star">★</label>
-                <input type="radio" id="value1" name="value" value="★"><label for="value1" class="star">★</label>
+                <div class="rating-category">
+                    <div class="rating-label">Value:</div>
+                    <div class="stars">
+                        <input type="radio" id="value-5" name="value" value="5" required><label for="value-5">&#9733;</label>
+                        <input type="radio" id="value-4" name="value" value="4" required><label for="value-4">&#9733;</label>
+                        <input type="radio" id="value-3" name="value" value="3" required><label for="value-3">&#9733;</label>
+                        <input type="radio" id="value-2" name="value" value="2" required><label for="value-2">&#9733;</label>
+                        <input type="radio" id="value-1" name="value" value="1" required><label for="value-1">&#9733;</label>
+                    </div>
+                </div>
             </div>
 
             <label for="feedback">Feedback:</label>
