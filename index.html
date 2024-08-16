@@ -96,7 +96,7 @@
 <body>
     <div class="container">
         <h1>Customer Service Feedback</h1>
-        <form action="https://formsubmit.co/nagybence20179@gmail.com" method="POST">
+        <form action="https://formsubmit.co/youremail@example.com" method="POST">
             <label for="name">Name (optional):</label>
             <input type="text" id="name" name="name">
 
@@ -143,6 +143,7 @@
 
             <input type="hidden" name="_subject" value="New Feedback Received">
             <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table"> <!-- Prevents email verification -->
 
             <button type="submit">Submit</button>
         </form>
