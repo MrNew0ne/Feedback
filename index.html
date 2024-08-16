@@ -21,7 +21,7 @@
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             width: 100%;
-            max-width: 500px; /* This ensures the form is centered */
+            max-width: 500px;
         }
         h1 {
             text-align: center;
@@ -96,7 +96,10 @@
 <body>
     <div class="container">
         <h1>Customer Service Feedback</h1>
-        <form action="https://formsubmit.co/24d.nagy.bence@kossuthmovar.hu" method="POST">
+        <form action="form-submit.php" method="POST">
+            <!-- Hidden input field to capture the recipient email -->
+            <input type="hidden" name="email" value="recipient@example.com">
+            
             <label for="name">Name (optional):</label>
             <input type="text" id="name" name="name">
 
@@ -140,10 +143,6 @@
 
             <label for="feedback">Feedback:</label>
             <textarea id="feedback" name="feedback" rows="4" required></textarea>
-
-            <input type="hidden" name="_subject" value="New Feedback Received">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table"> <!-- Prevents email verification -->
 
             <button type="submit">Submit</button>
         </form>
